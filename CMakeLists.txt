@@ -4,6 +4,7 @@ add_library(rtmidi
 )
 
 if (APPLE)
+    message(STATUS "Building rtmidi for OSX with CoreMidi.")
     target_compile_definitions(rtmidi PUBLIC "__MACOSX_CORE__")
 
     find_library(COREAUDIO_LIBRARY CoreAudio)
