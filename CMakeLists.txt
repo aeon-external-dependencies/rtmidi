@@ -18,7 +18,15 @@ if (APPLE)
     )
 endif ()
 
+if (MSVC)
+    message(STATUS "Building rtmidi for Windows with Windows MM.")
+    target_compile_definitions(rtmidi PUBLIC "__WINDOWS_MM__")
+
+    target_link_libraries(rtmidi winmm.lib)
+endif ()
+
 target_include_directories(rtmidi
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
 
