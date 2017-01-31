@@ -29,4 +29,5 @@ target_include_directories(rtmidi
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-
+set_target_properties(rtmidi PROPERTIES
+                      FOLDER "External/rtmidi")
