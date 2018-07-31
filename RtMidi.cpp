@@ -2296,7 +2296,8 @@ void MidiOutAlsa :: sendMessage( const unsigned char *message, size_t size )
 // time values.
 
 // Windows MM MIDI header files.
-#include <windows.h>
+struct IUnknown; // Workaround for /permissive- compile flag errors.
+#include <Windows.h>
 #include <mmsystem.h>
 
 // Convert a null-terminated wide string or ANSI-encoded string to UTF-8.
